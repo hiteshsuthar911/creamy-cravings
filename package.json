@@ -7,6 +7,7 @@
     "server": "cd server && npm run dev",
     "client": "cd client && npm run dev",
     "start": "npm start --prefix server",
+    "start:server": "node server/index.js",
     "seed": "node server/seed.js",
     "install:all": "npm install && npm install --prefix server && npm install --prefix client",
     "build": "npm run build --prefix client",
