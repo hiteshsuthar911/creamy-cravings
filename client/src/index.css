@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-dark-chocolate font-body dark:bg-dark-chocolate dark:text-off-white;
+  }
+
+  ::selection {
+    @apply bg-caramel/30 text-dark-chocolate;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-cream;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-caramel/50 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-caramel;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-caramel text-dark-chocolate font-semibold px-6 py-3 rounded-lg
+           hover:bg-caramel/90 hover:scale-105 transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-caramel/50 focus:ring-offset-2
+           focus:ring-offset-cream active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-caramel text-caramel font-semibold px-6 py-3 rounded-lg
+           hover:bg-caramel hover:text-dark-chocolate transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-caramel/50 focus:ring-offset-2
+           focus:ring-offset-cream;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300
+           hover:-translate-y-1 overflow-hidden;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-caramel to-chocolate bg-clip-text text-transparent;
+  }
+
+  .animate-stagger > * {
+    @apply opacity-0;
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-stagger > *:nth-child(1) { animation-delay: 0ms; }
+  .animate-stagger > *:nth-child(2) { animation-delay: 100ms; }
+  .animate-stagger > *:nth-child(3) { animation-delay: 200ms; }
+  .animate-stagger > *:nth-child(4) { animation-delay: 300ms; }
+  .animate-stagger > *:nth-child(5) { animation-delay: 400ms; }
+  .animate-stagger > *:nth-child(6) { animation-delay: 500ms; }
+  .animate-stagger > *:nth-child(7) { animation-delay: 600ms; }
+  .animate-stagger > *:nth-child(8) { animation-delay: 700ms; }
+}
